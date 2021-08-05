@@ -15,3 +15,21 @@ These are the changes from the version 1.3.1 to 1.3.2,
 - In this folder i.e. `packages/Webkul/Velocity/src/Resources/views/shop/layouts/particals` three files (`compare.blade.php`, `wishlist.blade.php` and `search-bar.blade.php`) are given. All these files are having individual components. For `compare.blade.php` and `wislist.blade.php`, you can use the `isText` prop to disable the text for mobile.
 
 - If still needs to check more changes then feel free to check this [link](https://github.com/bagisto/bagisto/pull/5020/files).
+
+## Downloadable product medias are moved to private disk
+
+- If someone wants to integrate into the existing project and the downloadable links are broken, then move your downloadable links folder to a private disk, and the broken link got fixed.
+
+- Refernece PR: [#4966](https://github.com/bagisto/bagisto/pull/4966)
+
+## Changes from invoice prefixes
+
+- Moved sequencer class from shop package to sales package, as orders and invoices are part of the sales. This will not impact as there is only one key and that one is in the repository.
+
+- Enhanced and scaled the `Sequencer` class.
+
+- As per the existing project perspective, `increment_id` by default is going null, so for displaying portion it will first check `increment_id` if not found then it will give the actual `id`.
+
+- In the core config, moved all the invoice settings to the new tab name `Invoice Settings` so make sure reset the value for the `Invoice Slip Design`.
+
+- Refernece PR: [#4966](https://github.com/bagisto/bagisto/pull/4956)
